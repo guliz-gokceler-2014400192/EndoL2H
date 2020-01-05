@@ -43,24 +43,28 @@ cd EndoL2H
 
 - Our dataset is a part of [The Kvasir Dataset](https://datasets.simula.no/kvasir/
 ).
-- The data split we used in training can also be downloaded [here]().
-- Or you can also download our dataset with the following script:
-
-```bash
-bash ./datasets/download_EndoL2H_dataset.sh
-```
+- The data split we used in training can be downloaded [here](https://1drv.ms/u/s!AsXONMc_kIHJb1pqU_1CGv9RBXk?e=5xGbvI).
 
 ### Dataset Organization
 
-Data needs to be arranged in the following order:
+Data needs to be arranged in the following format:
 
 ```python
 EndoL2H                 # Path to main folder
 └── datasets            # Folder of all datasets
       └── dataset_xxx   # Name of a dataset
-            ├── test
-            ├── train
-            └── val
+            |
+            ├── A       # High resolution images
+            |   ├── test
+            |   ├── train
+            |   └── val
+            |
+            └── B       # Low resolution images
+                ├── test
+                ├── train
+                └── val
+
+
 ```
 
 #### Network Architecture
@@ -69,7 +73,7 @@ EndoL2H                 # Path to main folder
 
 ### Training
 
-To train a model:
+ To train a model:
 
 ```bash
 python train.py --dataroot ./datasets/${nameOfDataset} --name unet_256 --model pix2pix --netG unet_256 --dataset_mode aligned --direction BtoA --preprocess none
@@ -80,14 +84,10 @@ python train.py --dataroot ./datasets/${nameOfDataset} --name unet_256 --model p
 
 ### Pre-trained Models
 
-You can download our pretrained model with the following script:
-
-```bash
-bash ./scripts/download_EndoL2H_model.sh
-```
+You can download our pretrained model [here](https://1drv.ms/u/s!AsXONMc_kIHJbhEIjkvPpnvxeCg?e=y6NfoA)
 
 - The pretrained model is saved at `./checkpoints/unet_256/latest_net_G.pth`.
-- You can also download weights using this [link]().
+
 
 ### Testing
 
