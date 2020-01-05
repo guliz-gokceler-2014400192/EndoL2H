@@ -60,7 +60,7 @@ class BaseOptions():
     def gather_options(self):
         """Initialize our parser with basic options(only once).
         Add additional model-specific and dataset-specific options.
-        These options are defined in the <modify_commandline_options> function
+        These options are difined in the <modify_commandline_options> function
         in model and dataset classes.
         """
         if not self.initialized:  # check if it has been initialized
@@ -105,7 +105,7 @@ class BaseOptions():
         # save to the disk
         expr_dir = os.path.join(opt.checkpoints_dir, opt.name)
         util.mkdirs(expr_dir)
-        file_name = os.path.join(expr_dir, '{}_opt.txt'.format(opt.phase))
+        file_name = os.path.join(expr_dir, 'opt.txt')
         with open(file_name, 'wt') as opt_file:
             opt_file.write(message)
             opt_file.write('\n')

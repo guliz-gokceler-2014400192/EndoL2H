@@ -18,7 +18,7 @@ If you use this code, please cite:
 - Clone this repo:
 
 ```bash
-cd
+cd ~
 git clone https://github.com/akgokce/EndoL2H
 cd EndoL2H
 ```
@@ -41,7 +41,7 @@ cd EndoL2H
 
 ### Dataset
 
-- Our dataset a part of [The Kvasir Dataset](https://datasets.simula.no/kvasir/
+- Our dataset is a part of [The Kvasir Dataset](https://datasets.simula.no/kvasir/
 ).
 - The data split we used in training can also be downloaded [here]().
 - Or you can also download our dataset with the following script:
