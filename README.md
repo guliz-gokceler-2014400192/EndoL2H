@@ -4,6 +4,10 @@ Code, dataset, and trained models for "EndoL2H: Deep Super-Resolution for Capsul
 
 If you use this code, please cite:
 
+Yasin Almalioglu, Abdulkadir Gokce, Kagan Incetan, Muhammed Ali Simsek, Kivanc Ararat, Richard J. Chen,
+Nichalos J. Durr, Faisal Mahmood, Mehmet Turan. "EndoL2H: Deep Super-Resolution for Capsule
+Endoscopy." [arXiv:2002.05459 (2020)](https://arxiv.org/abs/2002.05459).
+
 #### Summary of Our Work
 
 <img src='imgs/summary.png' width=512/> 
@@ -100,6 +104,7 @@ python test.py --dataroot ./datasets/${nameOfDataset} --name unet_256 --model pi
 - The test results will be saved to a html file here: `./results/unet_256/test_latest/index.html`.
 
 ## License
+
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
 ## Acknowledgments
@@ -111,7 +116,10 @@ This repository is based on [pytorch-CycleGAN-and-pix2pix](https://github.com/ju
 If you find our work useful in your research please consider citing our paper:
 
 ```
-@article{
-    
+@article{almalioglu2020endol2h,
+    title={EndoL2H: Deep Super-Resolution for Capsule Endoscopy},
+    author={Yasin Almalioglu and Abdulkadir Gokce and Kagan Incetan and Muhammed Ali Simsek and Kivanc Ararat and Richard J. Chen and Nichalos J. Durr and Faisal Mahmood and Mehmet Turan},
+    journal={arXiv preprint arXiv:2002.05459},
+    year={2020}
 }
 ```
