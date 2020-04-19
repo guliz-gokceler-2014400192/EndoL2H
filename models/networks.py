@@ -13,13 +13,16 @@ from PIL import Image
 import matplotlib.pyplot as plt
 
 from .losses import ContentLoss, StyleLoss, Normalization
-from SAB import SpatialAttention
+from models.SAB import SpatialAttention
+
 
 import torchvision.transforms as transforms
 import torchvision.models as models
 
 import copy
 
+content_layers_default = ['conv_4']
+style_layers_default = ['conv_1', 'conv_2', 'conv_3', 'conv_4', 'conv_5']
 ###############################################################################
 # Helper Functions
 ###############################################################################
@@ -385,7 +388,7 @@ class GANLoss(nn.Module):
             self.loss = nn.BCEWithLogitsLoss()
         elif gan_mode in ['wgangp']:
             self.loss = None
-        if gan_mode == 'style_texture':
+        elif gan_mode == 'style_texture':
             self.loss = get_style_texture_algorithm()
         else:
             raise NotImplementedError('gan mode %s not implemented' % gan_mode)
@@ -606,7 +609,7 @@ class UnetGenerator(nn.Module):
         super(UnetGenerator, self).__init__()
         # construct unet structure
         unet_block = UnetSkipConnectionBlock(ngf * 8, ngf * 8, input_nc=None, submodule=None, norm_layer=norm_layer, innermost=True)  # add the innermost layer
-        if use sab:
+        if use_sab:
             unet_block = SpatialAttention(ngf*8)
         for i in range(num_downs - 5):          # add intermediate layers with ngf * 8 filters
             unet_block = UnetSkipConnectionBlock(ngf * 8, ngf * 8, input_nc=None, submodule=unet_block, norm_layer=norm_layer, use_dropout=use_dropout)
