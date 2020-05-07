@@ -4,11 +4,11 @@ Code, dataset, and trained models for "EndoL2H: Deep Super-Resolution for Capsul
 
 If you use this code, please cite:
 
-Yasin Almalioglu, Abdulkadir Gokce, Kagan Incetan, Muhammed Ali Simsek, Kivanc Ararat, Richard J. Chen,
+<pre>Yasin Almalioglu, Abdulkadir Gokce, Kagan Incetan, Muhammed Ali Simsek, Kivanc Ararat, Richard J. Chen,
 Nichalos J. Durr, Faisal Mahmood, Mehmet Turan. "EndoL2H: Deep Super-Resolution for Capsule
-Endoscopy." [arXiv:2002.05459 (2020)](https://arxiv.org/abs/2002.05459).
+Endoscopy." [arXiv:2002.05459 (2020)](https://arxiv.org/abs/2002.05459).</pre>
 
-#### Summary of Our Work
+## Overview
 
 <img src='imgs/summary.png' width=512/> 
 
@@ -17,7 +17,7 @@ Endoscopy." [arXiv:2002.05459 (2020)](https://arxiv.org/abs/2002.05459).
 
 ## Getting Started
 
-### Installation
+### 1.Installation
 
 - Clone this repo:
 
@@ -27,7 +27,7 @@ git clone https://github.com/akgokce/EndoL2H
 cd EndoL2H
 ```
 
-### Prerequisites
+### 2.Prerequisites
 
 - Linux (Tested on Ubuntu 16.04)
 - NVIDIA GPU (Tested on Nvidia P100 using Google Cloud)
@@ -43,13 +43,13 @@ cd EndoL2H
   - For pip users, please type the command `pip install -r requirements.txt`.
   - For Conda users, you can use an installation script `./scripts/conda_deps.sh`. Alternatively, you can create a new Conda environment using `conda env create -f environment.yml`.
 
-### Dataset
+### 3.Dataset
 
 - Our dataset is a part of [The Kvasir Dataset](https://datasets.simula.no/kvasir/
 ).
 - The data split we used in training can be downloaded [here](https://1drv.ms/u/s!AsXONMc_kIHJb1pqU_1CGv9RBXk?e=5xGbvI).
 
-### Dataset Organization
+### 4.Dataset Organization
 
 Data needs to be arranged in the following format:
 
@@ -75,7 +75,7 @@ EndoL2H                 # Path to main folder
 
 <img src='imgs/architecture.png' width=1024/>
 
-### Training
+### 5.Training
 
  To train a model:
 
@@ -86,14 +86,14 @@ python train.py --dataroot ./datasets/${nameOfDataset} --name unet_256 --model p
 - To see more intermediate results, check out  `./checkpoints/unet_256/web/index.html`.
 - To view training results and loss plots, run `python -m visdom.server` and click the URL <http://localhost:8097.>
 
-### Pre-trained Models
+### 6.Pre-trained Models
 
 You can download our pretrained model [here](https://1drv.ms/u/s!AsXONMc_kIHJbhEIjkvPpnvxeCg?e=y6NfoA)
 
 - The pretrained model is saved at `./checkpoints/unet_256/latest_net_G.pth`.
 
 
-### Testing
+### 7.Testing
 
 To test the model:
 
