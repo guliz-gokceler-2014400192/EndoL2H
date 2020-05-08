@@ -154,7 +154,7 @@ If you find our work useful in your research please consider citing our paper:
 ```
 @article{almalioglu2020endol2h,
     title={EndoL2H: Deep Super-Resolution for Capsule Endoscopy},
-    author={Yasin Almalioglu and Abdulkadir Gokce and Kagan Incetan and Muhammed Ali Simsek and Kivanc Ararat and Richard J. Chen and Nichalos J. Durr and Faisal Mahmood and Mehmet Turan},
+    author={Yasin Almalioglu and Kutsev Bengisu Ozyoruk and Abdulkadir Gokce and Kagan Incetan and Muhammed Ali Simsek and Kivanc Ararat and Richard J. Chen and Nichalos J. Durr and Faisal Mahmood and Mehmet Turan},
     journal={arXiv preprint arXiv:2002.05459},
     year={2020}
 }
