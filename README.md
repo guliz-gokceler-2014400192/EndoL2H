@@ -65,11 +65,11 @@ cd EndoL2H
 ### 3. Code Base Structure
 
 The code base structure is explained below:
-- train.py: Script for image-to-image translation. It works for different models (with option '--model': e.g. pipx2pix, cyclegan, colorization) and various datasets (with option '--dataset_mode': e.g. aligned, unaligned, single, colorization). It creates model, dataset and visualizer given the option. Then, it does training. Use '--continue_train' and '--epoch_count' to resume your previous training. 
-- test.py: You can use this script to test the model after training. First, it creates model and dataset given the option. Then, it runs interference for --num_test images and save results to an HTML file. Use '--results_dir' to specify the results directory. 
-- networks.py: It contains PyTorch model definitions for all network.
-- base_options.py: It defines options used during both training and test time.
-- combine_A_and_B.py: pix2pix training requires paired data. It generates training data in the form of pairs of images {A,B}, where A and B are two different depictions of the same underlying scene. Corresponding images in a pair {A,B} must be the same size and have the same filename. Once the data is formatted this way, call:
+- **train.py:** Script for image-to-image translation. It works for different models (with option '--model': e.g. pipx2pix, cyclegan, colorization) and various datasets (with option '--dataset_mode': e.g. aligned, unaligned, single, colorization). It creates model, dataset and visualizer given the option. Then, it does training. Use '--continue_train' and '--epoch_count' to resume your previous training. 
+- **test.py:** You can use this script to test the model after training. First, it creates model and dataset given the option. Then, it runs interference for --num_test images and save results to an HTML file. Use '--results_dir' to specify the results directory. 
+- **networks.py:** It contains PyTorch model definitions for all network.
+- **base_options.py:** It defines options used during both training and test time.
+- **combine_A_and_B.py:** pix2pix training requires paired data. It generates training data in the form of pairs of images {A,B}, where A and B are two different depictions of the same underlying scene. Corresponding images in a pair {A,B} must be the same size and have the same filename. Once the data is formatted this way, call:
 
 ```bash
 python datasets/combine_A_and_B.py --fold_A /path/to/data/A --fold_B /path/to/data/B --fold_AB /path/to/data
