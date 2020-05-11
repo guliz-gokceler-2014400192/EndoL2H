@@ -177,10 +177,10 @@ Each set consists of low resolution image,high  resolution  image,  SRGAN,  DBPN
 First two rows are SR results for esophagitis which is basically inflammatory disease of esophagus, ulcerative colitis similarly inflammatory bowel disease and polyps abnormal growth of mucous membrane of small and large intestine. The others are the tuples to show EndoL2H inputs and their corresponding attention maps merged representations.
 
 <p align="center">
-  <img src='Results/1.png' width=512/> 
-  <img src='Results/2.png' width=512/> 
-  <img src='Results/4.png' width=512/> 
-  <img src='Results/5.png' width=512/> 
+  <img src='imgs/1.png' width=512/> 
+  <img src='imgs/2.png' width=512/> 
+  <img src='imgs/4.png' width=512/> 
+  <img src='imgs/5.png' width=512/> 
 </p>
 
 #### The evaluation of image groups in terms of structural similarity
@@ -190,7 +190,7 @@ First two rows are SR results for esophagitis which is basically inflammatory di
 **b)** Resulting SSIM heat maps. Red  color  denotes  lower SSIM  values  representing a low  structural  similarity  with  the  original  image  and  blue  color  represent  high  SSIM  values representing a high structural similarity with the original image.
 
 <p align="center">
-  <img src='Results/white_GMSD_SSIM.png' width=512/> 
+  <img src='imgs/white_GMSD_SSIM.png' width=512/> 
 </p>
 
 #### Quantitative Results
