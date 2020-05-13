@@ -11,13 +11,15 @@ def diff(l1,l2):
 dirs=["A","B"]
 for pth in dirs:
     files = []
+    val_set=[]
     start_dir = os.getcwd()+"/x8/"+pth
     pattern   = "*.jpg"
 
     for dir,_,_ in sorted(os.walk(start_dir)):
         if "val" not in dir:
             files.extend(glob(os.path.join(dir,pattern))) 
-
+        else:
+            val_set.extend(glob(os.path.join(dir,pattern)))
 
     esophagitis=[]
     normal_pylorus=[]
@@ -132,10 +134,11 @@ for pth in dirs:
 
     for i in range(len(trains)):
         train=trains[i]
+        os.mkdir(start_dir + "/fold"+str(i+1))
         for index in range(0,len(train)):
             file=train[index]
             name=file[file.rfind("/")+1:]
-            fold_path=start_dir + "/train/fold"+str(i+1)+"/"
+            fold_path=start_dir + "/fold"+str(i+1)+"/train/"
             if not os.path.exists(fold_path):
                 os.mkdir(fold_path)
             newPath = shutil.copy(file, fold_path)
@@ -146,10 +149,20 @@ for pth in dirs:
         for index in range(0,len(test)):
             file=test[index]
             name=file[file.rfind("/")+1:]
-            fold_path=start_dir + "/test/fold"+str(i+1)+"/"
+            fold_path=start_dir + "/fold"+str(i+1)+"/test/"
+            if not os.path.exists(fold_path):
+                os.mkdir(fold_path)
+            newPath = shutil.copy(file, fold_path)
+    
+    for i in range(5):
+        for file in val_set:
+            name=file[file.rfind("/")+1:]
+            fold_path=start_dir + "/fold"+str(i+1)+"/val/"
             if not os.path.exists(fold_path):
                 os.mkdir(fold_path)
             newPath = shutil.copy(file, fold_path)
 
-    for file in files:
-        os.remove(file)
+    os.rmdir(start_dir+"/test")
+    os.rmdir(start_dir+"/train")
+    os.rmdir(start_dir+"/val")
+    
