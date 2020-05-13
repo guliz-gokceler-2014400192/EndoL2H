@@ -98,42 +98,37 @@ EndoL2H                 # Path to main folder
       └── dataset_xxx   # Name of a dataset
             |
             ├── A       # High resolution images
-            |   ├── test
-            |   |    ├──fold1
-            |   |        ├──1.jpg
-            |   |        ├──2.jpg
-            |   |        ├── ...
-            |   |    ├── ...
-            |   |    └──fold5
-            |   ├── train
-            |   |    ├──fold1
-            |   |        ├──1.jpg
-            |   |        ├──2.jpg
-            |   |        ├── ...
-            |   |    ├── ...
-            |   |    └──fold5        
-            |   └── val
-            |   |    ├──1.jpg
-            |   |    ├──2.jpg
-            |   |    ├── ...
+            |   ├── fold1
+            |   |    ├──train
+            |   |    |   ├──1.jpg
+            |   |    |   ├──2.jpg
+            |   |    |   ├── ...
+            |   |    ├── test
+            |   |    └── val
+            |   ├── fold2       
+            |   |     
+            |   ├── fold3   
+            |   |     
+            |   ├── fold4   
+            |   |       
+            |   └── fold5
             |
             └── B       # Low resolution images
-                ├── test
-                |    ├──fold1
-                |        ├──1.jpg
-                |        ├── ...
-                |    ├── ...
-                |    └──fold5
-                ├── train
-                |    ├──fold1
-                |        ├──1.jpg
-                |        ├── ...
-                |    ├── ...
-                |    └──fold5
-                └── val
-                     ├──1.jpg
-                     ├── ...
-                 
+                ├── fold1
+                |    ├──train
+                |    |   ├──1.jpg
+                |    |   ├──2.jpg
+                |    |   ├── ...
+                |    ├── test
+                |    └── val
+                ├── fold2       
+                |     
+                ├── fold3   
+                |     
+                ├── fold4   
+                |       
+                └── fold5
+                    
 └── checkpoints 
      |
      └── generator_name #e.g. unet256, unet128, resnet_6blocks, resnet_9blocks
