@@ -82,6 +82,11 @@ This will combine each pair of images (A,B) into a single image file, ready for 
 - Our dataset is a part of [The Kvasir Dataset](https://datasets.simula.no/kvasir/
 ).
 - The data split we used in training can be downloaded [here](https://drive.google.com/open?id=189-QVefK-uoD9fwypRCIKzDWqh_F69R8).
+- After downloading the dataset, to create 5 folds:
+```bash
+cd EndoL2H/datasets/x8
+python 5_fold.py
+```
 
 ### 5. Dataset Organization
 
