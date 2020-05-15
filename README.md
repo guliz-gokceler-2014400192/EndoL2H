@@ -5,7 +5,7 @@ Code, dataset, and trained models for "EndoL2H: Deep Super-Resolution for Capsul
 If you use this code, please cite:
 
 
->    Yasin Almalioglu, Kutsev Bengisu Ozyoruk, Abdulkadir Gokce, Kagan Incetan, Muhammed Ali Simsek, Kivanc 
+>    Yasin Almalioglu, Kutsev Bengisu Ozyoruk, Abdulkadir Gokce, Kagan Incetan, Guliz Irem Gokceler, Muhammed Ali Simsek, Kivanc 
 Ararat, Richard J. Chen, Nichalos J. Durr, Faisal Mahmood, Mehmet Turan. "EndoL2H: Deep Super-Resolution 
 for Capsule Endoscopy." [arXiv:2002.05459 (2020)](https://arxiv.org/abs/2002.05459). 
 
@@ -195,11 +195,13 @@ First two rows are SR results for esophagitis which is basically inflammatory di
 
 #### Quantitative Results
 
+PSNR and SSIM result of EndoL2H algorithm is provided in `psnr_ssim_calculations.ipynb`. After testing the algorithm, to see the results run it on Jupyter Notebook. 
+
 ## Reproducibility
 
 You can download our pretrained model [here](https://drive.google.com/open?id=1rAi5i5vTdTwtJkWbz2gHaOXemLjaWNGr)
 
-- The pretrained model is saved at `./checkpoints/unet_256/latest_net_G.pth` and `./checkpoints/unet_256/latest_net_D.pth`. 
+- The pretrained model is saved at `./checkpoints/unet_256/latest_net_G.pth`. 
 
 ## License
 
@@ -216,7 +218,7 @@ If you find our work useful in your research please consider citing our paper:
 ```
 @article{almalioglu2020endol2h,
     title={EndoL2H: Deep Super-Resolution for Capsule Endoscopy},
-    author={Yasin Almalioglu and Kutsev Bengisu Ozyoruk and Abdulkadir Gokce and Kagan Incetan and Muhammed Ali Simsek and Kivanc Ararat and Richard J. Chen and Nichalos J. Durr and Faisal Mahmood and Mehmet Turan},
+    author={Yasin Almalioglu and Kutsev Bengisu Ozyoruk and Abdulkadir Gokce and Kagan Incetan and Guliz Irem Gokceler and Muhammed Ali Simsek and Kivanc Ararat and Richard J. Chen and Nichalos J. Durr and Faisal Mahmood and Mehmet Turan},
     journal={arXiv preprint arXiv:2002.05459},
     year={2020}
 }
