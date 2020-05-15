@@ -20,7 +20,7 @@ Our main contributions are as follows:
 
 #### Summary of Our Work 
   
-A conditional GAN combined with spatial attention unit maps low resolution(LR) endo-scopic images to diagnostically relevant  high resolution(HR) endoscopic images. Unlike an unconditional GAN, both the generator and discriminator observe the input LR images.
+A conditional GAN combined with spatial attention unit maps low resolution(LR) endoscopic images to diagnostically relevant  high resolution(HR) endoscopic images. Unlike an unconditional GAN, both the generator and discriminator observe the input LR images.
 
 <p align="center">
 <img src='imgs/summary_4.png' width=384/> 
@@ -28,7 +28,7 @@ A conditional GAN combined with spatial attention unit maps low resolution(LR) e
 
 #### Network Architecture
 
-**a** Overall system architecture of EndoL2H super-resolution framework. A low resolution input image is fed to the generator that creates an estimated high resolution counterpart, which is then served to the discriminator. The Markovian discriminator takes tuples of an LR input image and the corresponding HR image (real or generated), and tries to recognize whether the HR image is real or fake. Our generator is U-net with additional SAB layer which is sequentially downsampling tensor by factor of 2 until the latent feature representation and upsampled by the following decoder layers by a factor of 2. We are using convolutional PatchGAN as a classifier which penalize the structure in accordance with the image patch sizes (30x30).  **b** is the flow diagram of the spatial attention block (SAB) which is selectively focus on clinically more relevant regions and also its output images are presented. **c** The feature maps of attention U-Net which is the summary of applied filters and their input-output tensor sizes for 8x.The low resolution images are of 128x128 sizes and their size changes before and after each convolution layers are given. As seen, SAB block preserves the tensor sizes. Finally, the tensor size ends up with 1024x1024 for 8x. 
+**a)** Overall system architecture of EndoL2H super-resolution framework. A low resolution input image is fed to the generator that creates an estimated high resolution counterpart, which is then served to the discriminator. The Markovian discriminator takes tuples of an LR input image and the corresponding HR image (real or generated), and tries to recognize whether the HR image is real or fake. Our generator is U-net with additional SAB layer which is sequentially downsampling tensor by factor of 2 until the latent feature representation and upsampled by the following decoder layers by a factor of 2. We are using convolutional PatchGAN as a classifier which penalize the structure in accordance with the image patch sizes (30x30).  **b)** is the flow diagram of the spatial attention block (SAB) which is selectively focus on clinically more relevant regions and also its output images are presented. **c)** The feature maps of attention U-Net which is the summary of applied filters and their input-output tensor sizes for 8x.The low resolution images are of 128x128 sizes and their size changes before and after each convolution layers are given. As seen, SAB block preserves the tensor sizes. Finally, the tensor size ends up with 1024x1024 for 8x. 
 
 <p align="center">
 <img src='imgs/Z1.png' width=600/> 
@@ -69,6 +69,7 @@ The code base structure is explained below:
 - **test.py:** You can use this script to test the model after training. First, it creates model and dataset given the option. Then, it runs interference for --num_test images and save results to an HTML file. Use '--results_dir' to specify the results directory. 
 - **networks.py:** It contains PyTorch model definitions for all network.
 - **base_options.py:** It defines options used during both training and test time.
+- **psnr_ssim_calculations.ipynb:** You can use this script to see overall and fold by fold PSNR and SSIM results.
 - **combine_A_and_B.py:** pix2pix training requires paired data. It generates training data in the form of pairs of images {A,B}, where A and B are two different depictions of the same underlying scene. Corresponding images in a pair {A,B} must be the same size and have the same filename. Once the data is formatted this way, call:
 
 ```bash
@@ -195,7 +196,7 @@ First two rows are SR results for esophagitis which is basically inflammatory di
 
 #### Quantitative Results
 
-PSNR and SSIM result of EndoL2H algorithm is provided in `psnr_ssim_calculations.ipynb`. After testing the algorithm, to see the results run it on Jupyter Notebook. 
+PSNR and SSIM results of EndoL2H algorithm are provided in `psnr_ssim_calculations.ipynb`. After testing the algorithm, to see the results run it on Jupyter Notebook. 
 
 ## Reproducibility
 
