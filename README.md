@@ -200,9 +200,9 @@ PSNR and SSIM results of EndoL2H algorithm are provided in `psnr_ssim_calculatio
 
 ## Reproducibility
 
-The Z-Scores of the algorithms are provided [here](https://drive.google.com/open?id=11AKGdmeBVQTR_mz7rxdBM26W7VQ8Rhso). To see the statistical significance analysis results between EndoL2H and the other algorithms DBPN, RCAN and SRGAN, you can run `significance_analysis.ipynb` on Jupyter Notebook.
+The GMSD, LPIPS, PSNR and SSIM z-scores of the algorithms EndoL2H, DBPN, RCAN and SRGAN are provided [here](https://drive.google.com/open?id=11AKGdmeBVQTR_mz7rxdBM26W7VQ8Rhso). To see the statistical significance analysis results between EndoL2H and the other algorithms, you can run `significance_analysis.ipynb` on Jupyter Notebook.
 
-You can download our pretrained model [here](https://drive.google.com/open?id=1rAi5i5vTdTwtJkWbz2gHaOXemLjaWNGr)
+You can download our pretrained model [here](https://drive.google.com/open?id=1rAi5i5vTdTwtJkWbz2gHaOXemLjaWNGr).
 
 - The pretrained model is saved at `./checkpoints/unet_256/latest_net_G.pth`. 
 
