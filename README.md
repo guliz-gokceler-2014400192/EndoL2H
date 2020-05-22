@@ -204,6 +204,8 @@ The GMSD, LPIPS, PSNR and SSIM z-scores of the algorithms EndoL2H, DBPN, RCAN an
 
 You can download our pretrained model [here](https://drive.google.com/open?id=1rAi5i5vTdTwtJkWbz2gHaOXemLjaWNGr).
 
+To compare the results of our model with DBPN and RCAN, you can download pretrained models of these two algorithms [here](https://drive.google.com/open?id=14kXMxQ74KulwNMBOJ4Efi587UTNiiaMW).
+
 - The pretrained model is saved at `./checkpoints/unet_256/latest_net_G.pth`. 
 
 ## License
